@@ -21,9 +21,10 @@ public:
                 if(j == i){
                     break;
                 }
-                int temp = nums[i];
-                nums[i] = nums[j];
-                nums[j] = temp;
+                // int temp = nums[i];
+                // nums[i] = nums[j];
+                // nums[j] = temp;
+                swap(nums[i], nums[j]);
             }
         }
         return i;
