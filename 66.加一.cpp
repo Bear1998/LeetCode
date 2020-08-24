@@ -19,16 +19,10 @@ public:
             digits[0] = digits[0] + digits[1] / 10;
         }
         if(digits[0] >= 10){
-            vector<int> result;
-            result.push_back(1);
-            result.push_back(digits[0] % 10);
-             for(int i= 1;i < len;i++){
-                 result.push_back(digits[i]);
-            }
-            return result;
-        }else{
-            return digits;
+            digits[0] = digits[0] % 10;
+            digits.insert(digits.begin(),1);
         }
+        return digits;
     }
 };
 // @lc code=end
