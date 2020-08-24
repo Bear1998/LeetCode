@@ -10,18 +10,17 @@ public:
     bool isPalindrome(int x) {
         if(x < 0)
             return false;
-        vector<char> vector_a;
+        long long ans = 0;
+        long long fir = x;
         while(x){
             int t = x % 10;
+            ans = ans * 10 + t;
             x= x/10;
-            vector_a.push_back(t + '0');
         }
-        int length = vector_a.size();
-        for(int i = 0; i< length/2 ;i++){
-            if(vector_a[i] != vector_a[length -1-i])
-                return false;
-        }
-        return true;
+        if(fir == ans)
+            return true;
+        else
+            return false;
     }
 };
 // @lc code=end
