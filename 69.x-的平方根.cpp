@@ -12,17 +12,19 @@ public:
             return 0;
         else if(x == 1)
             return 1;
-        int right = x/2;
-        while(x / right < right){
-            right /= 2;
+        int left = 1;
+        int right = x/2+1;
+        int mid = (left + right)>>1;
+        while(left <= right){
+            if(x / mid >= mid){
+                left = mid + 1;
+            }
+            else{
+                right = mid - 1;
+            }
+            mid = (left + right) >> 1;
         }
-        while(x / right > right){
-            right ++;
-        }
-        if(x / right == right)
-            return right;
-        else
-            return right - 1;
+        return mid;
     }
 };
 // @lc code=end
